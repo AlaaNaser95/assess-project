@@ -48,10 +48,10 @@ You have to create ormconfig.json file in the main directory and set the followi
     "dist/**/*.entity{.ts,.js}"
   ],
   "migrations": [
-    "src/modules/migration/*{.ts,.js}"
+    "src/migration/*{.ts,.js}"
   ],
   "cli": {
-    "migrationsDir": "src/modules/migration"
+    "migrationsDir": "src/migration"
   },
   "synchronize": true
 }
