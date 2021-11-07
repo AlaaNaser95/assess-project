@@ -37,7 +37,6 @@ export class InvoicesService {
     const invoice = new Invoice();
     invoice.userId = user.id;
     let createdInvoice = await this.invoiceRepository.save(invoice);
-    //createdInvoice = await this.invoiceRepository.findOne(createdInvoice.id);
     let totalInvoicePrice = 0;
     //creating invoice items
     invoiceItems = invoiceItems.map((invoiceItem) => {
@@ -68,7 +67,9 @@ export class InvoicesService {
     if (userId) {
       filter = Object.assign(filter, { userId });
     }
+    console.log(filter);
     const [result, total] = await this.invoiceRepository.findAndCount(filter);
+
     return { data: result, count: total, page, limit };
   }
 
